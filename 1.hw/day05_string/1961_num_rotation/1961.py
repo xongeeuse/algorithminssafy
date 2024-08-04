@@ -14,3 +14,11 @@ sys.stdin = open('input.txt')
 #                 data[i][j], data[j][i] = data[j][i], data[i][j]
 #
 #     print(data)
+
+
+
+
+
+# A = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+# for item in A:
+#     print(item)

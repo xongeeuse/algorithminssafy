@@ -11,9 +11,9 @@ def binary_search(l, r, key):
         if c == key:
             return cnt
         elif c < key:
-            l = c + 1
+            l = c
         elif c > key:
-            r = c - 1
+            r = c
     return cnt
 
 for testcase in range(1, T+1):
