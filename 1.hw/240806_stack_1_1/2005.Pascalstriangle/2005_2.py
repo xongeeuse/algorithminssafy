@@ -8,7 +8,7 @@ def pascal(N):
         data[i][0] = 1
         data[i][-1] = 1
 
-    for i in range(N):
+    # for i in range(N):                                    # 반복문 합쳐도 작동하네?
         for j in range(i+1):
             if data[i][j] != 1:                             # 현재 위치의 값이 1이 아닐 때
                 data[i][j] = data[i-1][j-1] + data[i-1][j]  # 왼쪽과 오른쪽 위의 숫자의 합 배정
