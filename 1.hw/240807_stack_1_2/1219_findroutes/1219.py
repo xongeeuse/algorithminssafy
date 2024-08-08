@@ -1,28 +1,16 @@
 import sys
 sys.stdin = open('input.txt')
 
-# 함수 수정해서 써봐~~~~~~~~~~~~~~~~~~~!
-# 다시 해야 함!!!!!!!!!!!
-# def DFS(s, V):              # s 시작 정점, V 정점 개수(1번부터 정점의 마지막 정점)
-#     visited = [0] * (V+1)   # 방문한 정점을 표시
-#     stack = []              # 스택 생성
-#     print(s)
-#     visited[s] = 1          # 시작정점 방문 표시
-#     v = s
-#     while True:
-#         for w in adjL[v]:           # v에 인접하고, 방문하지 않은 w가 있으면
-#             if visited[w] == 0:
-#                 stack.append(v)     # push(v) 현재 정점을 push하고
-#                 v = w               # w에 방문
-#                 print(v)
-#                 visited[w] = 1      # w에 방문 표시
-#                 break               # v부터 다시 탐색
-#         # for/else (break로 빠져나오지 않았으면 else문으로 이동)
-#         else:                       # 남은 인접 정점이 없어서 break가 걸리지 않은 경우
-#             if stack:               # 이전 갈림길을 스택에서 꺼내서... if TOP > -1
-#                 v = stack.pop()
-#             else:                   # 되돌아갈 곳이 없으면 남은 갈림길이 없으면 탐색 종료
-#                 break
+# graph: 그래프를 나타내는 인접 리스트
+# start: 탐색을 시작할 정점
+# visited: 방문한 정점을 저장하는 집합
+# result: 탐색 경로를 저장하는 리스트
+def dfs(graph, start, visited, result):
+    visited.add(start)  # 현재 정점을 방문했다고 표시
+    result.append(start)  # 현재 정점을 탐색 경로에 추가
+    for neighbor in graph[start]:  # 현재 정점의 모든 인접 정점에 대해
+        if neighbor not in visited:  # 인접 정점이 아직 방문되지 않았다면
+            dfs(graph, neighbor, visited, result)  # 그 정점으로 DFS 재귀 호출
 
 
 
@@ -40,4 +28,8 @@ for _ in range(1, T+1):
         adjL[v1].append(v2)
         # adjL[v2].append(v1)           # 반대 방향은 필요 없음
 
-    print(adjL)
+    # print(adjL)
+    visited = set()  # 방문한 정점을 저장할 집합
+    result = []  # 탐색 경로를 저장할 리스트
+    dfs(adjL, 0, visited, result)
+    print(result)
