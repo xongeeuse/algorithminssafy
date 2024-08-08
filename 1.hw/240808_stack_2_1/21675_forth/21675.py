@@ -2,7 +2,7 @@ import sys
 sys.stdin = open('input.txt')
 
 
-# 후위표기법 data를 계산해주는 함수
+# 후위표기식을 계산해주는 함수
 def calculator(data):
     stack = []
 
@@ -11,7 +11,7 @@ def calculator(data):
             stack.append(int(d))            # int 변환해서 스택에 넣어라
         elif d == '.':                      # d가 점이고
             if len(stack) == 1:             # 스택에 남은 숫자가 하나면
-                return int(stack.pop())     # 계산 종료
+                return int(stack.pop())     # 결과 리턴 (정상 완료)
             else:                           # 스택에 남은 숫자가 하나가 아니면
                 return 'error'              # 에러 리턴
         else:                               # d가 숫자도 점도 아닐 때 (=연산기호)
@@ -21,31 +21,20 @@ def calculator(data):
                 if d == '+':                # 연산 진행하고
                     result = n2 + n1
                 elif d == '-':
-                    result = n2 + n1
+                    result = n2 - n1
                 elif d == '*':
                     result = n2 * n1
-                elif d == '/':                  # 나눗셈의 경우
-                    if n1 == 0:                 # n1 == 0인 경우
-                        return 'error'          # 에러 처리
-                    else:
-                        result = n2 / n1
+                elif d == '/':
+                    result = n2 / n1
                 stack.append(result)        # 연산 결과값 다시 스택에 넣기
+
             else:                           # d가 숫자도 .도 아닌데 스택에 숫자가 2개 미만이면
                 return 'error'              # 에러 리턴
-
 
 
 T = int(input())
 
 for tc in range(1, T+1):
-    data = list(input().split())
+    data = input().split()
 
     print(f'#{tc}', calculator(data))
-
-    # try:
-    #     print(f'#{tc}', calculator(data))
-    # except:
-    #     print(f'#{tc}', 'error')
-
-
-####################### 계속 9/10 맞음ㅎ..

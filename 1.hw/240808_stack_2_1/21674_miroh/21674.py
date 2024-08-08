@@ -24,7 +24,8 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     maze = list(map(int, input()) for _ in range(N))
-
+    wall, start, end = 1, 2, 3
+    visited = [[0] * N for _ in range(N)]
+    result = 0
+    x, y = 0, 0
     sti, stj = fstart(N)
-
-    visited =[[0] * N fpr ]
