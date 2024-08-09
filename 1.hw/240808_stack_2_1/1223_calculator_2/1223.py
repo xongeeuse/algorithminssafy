@@ -41,7 +41,7 @@ def calculator(data):
             if d == '+':
                 result = n2 + n1
             elif d == '-':
-                result = n2 + n1
+                result = n2 - n1
             elif d == '*':
                 result = n2 * n1
             elif d == '/':
