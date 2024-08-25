@@ -1,7 +1,8 @@
 import sys
 sys.stdin = open('input.txt')
 
-# python3으로 제출하면 시간초과, pypy3으로 제출하면 통과
+# python3으로 제출하면 시간초과
+# pypy3으로 제출하면 통과
 
 from collections import deque
 def bfs(X):
