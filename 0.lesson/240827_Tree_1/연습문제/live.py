@@ -15,6 +15,7 @@ arr = list(map(int, input().split()))
 left = [0]*(N+1)        # 부모를 인덱스로 왼쪽자식번호 저장
 right = [0]*(N+1)       #
 par = [0]*(N+1)         # 자식을 인덱스로 부모 저장
+# ex) left[3] = 2 ===> 3번 부모의 왼쪽 자식은 2다.
 
 for i in range(E):
     p, c = arr[i*2], arr[i*2+1]
