@@ -24,7 +24,7 @@ for tc in range(1, T + 1):
 
     for i in range(0, len(data), 2):
         tree[data[i]].append(data[i + 1])       # parent: data[i], child: data[i + 1]
-
+    print(tree)
     count_node(N)
     print(f'#{tc}', result)
 
