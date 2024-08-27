@@ -25,8 +25,6 @@ N명의 외계인
 def solution(visited, current_sum, cnt, row):
     global mn
 
-    # while True:
-
     if cnt == N - 1:                        # 탐색 끝났으면
         if mn > current_sum:                # 기존 mn값과 비교 후 재할당
             mn = current_sum
@@ -42,16 +40,17 @@ def solution(visited, current_sum, cnt, row):
             # 돌아오면 방문 체크 해제하고...
             visited[j] = 0
 
-    # return mn
-
 
 
 T = int(input())
 for tc in range(1, T + 1):
     N = int(input())    # N: 외계인의 수
     data = [list(map(int, input().split())) for _ in range(N)]
-    # visited = [0] * N
-    mn = 10000
+    mn = float('inf')
     cnt = 0
     solution(visited=[0] * N, current_sum=0, cnt=0, row=0)
     print(f'#{tc}', mn)
+
+
+
+
