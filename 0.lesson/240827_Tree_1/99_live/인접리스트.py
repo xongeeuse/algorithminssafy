@@ -7,11 +7,11 @@ def dfs(node):
     if node == -1:
         return
 
-    # preorder.append(node)
+    preorder.append(node)
     dfs(graph[node][0])
     inorder.append(node)
     dfs(graph[node][1])
-    # postorder.append(node)
+    postorder.append(node)
 
 
 
@@ -40,5 +40,3 @@ dfs(1)
 print(*inorder)
 print(*preorder)
 print(*postorder)
-
-print(graph)
