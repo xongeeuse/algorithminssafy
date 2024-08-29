@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input1.txt')
+# sys.stdin = open('input1.txt')
 
 '''
 N개의 활동 구역
@@ -14,7 +14,7 @@ N개의 활동 구역
 
 def solution(data, K):
     cnt = 0                             # 몇 번째 칸까지 이동했는지 확인할 변수
-    idx = 0                             # 현재 탐색 중인 index
+    idx = 1                             # 현재 탐색 중인 index
 
     while cnt < K:                      # cnt가 최대 이동 칸수보다 작은 동안
         idx += 1                        # idx 늘려가며 탐색 진행
@@ -25,7 +25,7 @@ def solution(data, K):
             cnt = 0
         else:
             cnt += 1                    # 먹이 없으면 cnt + 1
-    return idx + 1
+    return idx
 
 
 T = int(input())
