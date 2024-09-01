@@ -37,4 +37,5 @@ for tc in range(1, T + 1):
 
     print(tree)
     inorder(node=1)
+    print(tree_inorder)
     print(f'#{tc}', *solution(tree_inorder))

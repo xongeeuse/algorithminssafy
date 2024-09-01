@@ -22,16 +22,17 @@ for tc in range(1, T+1):
             d += [0] * (max_len - len(d))
 
     for j in range(max_len):
-        temp, cnt = 0, 0
-        for i in range(N):
-            if data[i][j]:
-                temp += data[i][j]
-                cnt += 1
+        for sti in range(N):
+            temp, cnt = 0, 0
+            for i in range(sti, N):
+                if data[i][j]:
+                    temp += data[i][j]
+                    cnt += 1
 
-            if cnt == M:
-                if mx < temp: mx = temp
-                if mn > temp: mn = temp
-                temp, cnt = 0, 0
+                if cnt == M:
+                    if mx < temp: mx = temp
+                    if mn > temp: mn = temp
+                    break
 
     if mx == float('-inf'):
         print(f'#{tc}', -1)
