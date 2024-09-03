@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**5)
+
 def make_tree(visited, node):
     for v in adjL[node]:
         if visited[v]:
