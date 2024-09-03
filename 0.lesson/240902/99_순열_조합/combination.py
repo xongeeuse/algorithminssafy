@@ -17,7 +17,7 @@ def combine(start, current, r):
         current.pop()
 
 result = []
-arr = [1, 2, 3]
-combine(0, [], 2)
+arr = [1, 1, 3]
+combine(0, [], 3)
 
 print(result)

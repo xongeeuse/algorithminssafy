@@ -4,6 +4,10 @@ import itertools
 arr = [1, 1, 2]
 print(list(set(itertools.permutations(arr))))
 '''
+import itertools
+
+arr = [1, 1, 2]
+print(list(set(itertools.permutations(arr))))
 
 def permute(acc, arr):
     if len(arr) == 0:

@@ -31,10 +31,10 @@ sys.stdin = open('input.txt')
 
 
 def prize_money(cnt):
-    global ans
+    global result
 
     if cnt == N:                                    # 주어진 횟수만큼 교환 끝났다면
-        ans = max(ans, int(''.join(data)))
+        result = max(result, int(''.join(data)))
         # tmp_result = int(''.join(data))
         # if ans <= tmp_result:                      # 현재 결과와 tmp 비교해서 재할당
         #     ans = tmp_result
@@ -46,7 +46,7 @@ def prize_money(cnt):
 
             tmp = int(''.join(data))                # 숫자판 상태 저장
             if (cnt, tmp) not in visited:           # 지금까지 지나온 결과가 아니라면
-                visited.add((cnt, tmp))             # (현재 교환 횟수, 숫자판 상태) 방문기록 해주고
+                visited.add((cnt, tmp))             # (현재까지 교환 횟수, 숫자판 상태) 방문기록 해주고
 
                 prize_money(cnt + 1)                # 다음 카드 바꾸러 고고
 
@@ -61,11 +61,11 @@ for tc in range(1, T + 1):
     N = int(N)
     data = list(data)
     M = len(data)
-    visited, result = set(), []
-    ans = 0
+    visited = set()
+    result = 0
     prize_money(cnt= 0)
 
-    print(f'#{tc}', ans)
+    print(f'#{tc}', result)
 
 '''
 15**10
