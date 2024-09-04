@@ -19,7 +19,7 @@ for _ in range(N - 1):
 visited[1] = 1
 make_tree(visited, node = 1)
 
-# print(tree)
+print(tree)
 
 x = 2
 while x <= N:

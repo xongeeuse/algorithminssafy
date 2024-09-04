@@ -33,3 +33,4 @@ for tc in range(1, T + 1):
             if x in tree[i]:
                 print(i)
                 x += 1
+                break
