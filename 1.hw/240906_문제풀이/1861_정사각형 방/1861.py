@@ -1,7 +1,7 @@
 import sys
 sys.stdin = open('input.txt', "r")
 
-# 22번 케이스 재귀 호출 깊이 초과해서 넣어줌..
+# 22번 케이스 재귀 호출 깊이 초과해서 넣어줌.. 해결 완!
 # import sys
 # sys.setrecursionlimit(10**7)
 
