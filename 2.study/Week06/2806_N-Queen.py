@@ -14,7 +14,7 @@ def check(row):
         if visited[row] == visited[previous_row]:
             return False
 
-        # 대각선 방향 확인 (절대값이 같다 == 대각선 방향이다)
+        # 대각선 방향 확인 (절대값이 같다 = 대각선 방향이다)
         if abs(visited[row] - visited[previous_row]) == abs(row - previous_row):
             return False
 
