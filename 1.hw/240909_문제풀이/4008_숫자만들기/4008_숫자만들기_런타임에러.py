@@ -49,7 +49,7 @@ for tc in range(1, T + 1):
 
     # 주어진 연산자들로 순열 생성
     permu_operators = list(set(list(itertools.permutations(opers))))
-    # print(permu_operators)
+    print(permu_operators)
 
     # 만들어진 순열대로 반복문 돌리기
     for permu_oper in permu_operators:

@@ -36,7 +36,7 @@ for tc in range(1, T + 1):
             union(v1, v2)
             cnt += 1
             total += weight
-        if cnt == V + 1:
+        if cnt == V:
             break
 
     print(f'#{tc}', total)

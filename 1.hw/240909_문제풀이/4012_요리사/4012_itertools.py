@@ -37,6 +37,7 @@ for tc in range(1, T + 1):
     result = float('inf')
     ingredients = list(range(N))
     combis = list(itertools.combinations(ingredients, N // 2))
+    # print(combis)
 
     for combi_A in combis:
         get_synergy(combi_A)

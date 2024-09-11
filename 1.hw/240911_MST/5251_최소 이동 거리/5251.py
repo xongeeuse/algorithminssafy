@@ -32,7 +32,7 @@ def dijkstra(start):
                 continue
 
             # 여기까지 넘어왔다면
-            # 새로운 비용 다음 노드에 기록해주고 힙에 삽입
+            # 새로운 비용을 다음 노드에 기록해주고 힙에 삽입
             distance[next_node] = new_cost
             heapq.heappush(pq, (new_cost, next_node))
 

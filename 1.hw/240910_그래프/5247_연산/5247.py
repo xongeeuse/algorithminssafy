@@ -27,7 +27,7 @@ sys.stdin = open('input.txt')
 from collections import deque
 
 def bfs(N):
-    global result
+    # global result
     q = deque()
     q.append(N)
     
@@ -36,10 +36,9 @@ def bfs(N):
         num = q.popleft()
         if num == M:
             break
-        if num > 1000000:
-            continue
+
         for i in [num + 1, num - 1, num * 2, num - 10]:
-            if 0 <= i <= 1000000 and visited[i] == -1:          # i 범위 조건 넣어야 런타임에러 안나고 통과
+            if 0 < i <= 1000000 and visited[i] == -1:          # i 범위 조건 넣어야 런타임에러 안나고 통과
                 visited[i] = visited[num] + 1
                 q.append(i)
     
@@ -53,7 +52,7 @@ def bfs(N):
     #         continue
     #
     #     for i in [num + 1, num - 1, num * 2, num - 10]:
-    #         if 0 <= i < 1000001 and visited[i] == 0:
+    #         if 0 < i <= 1000000 and visited[i] == 0:
     #             visited[i] = 1
     #             q.append((i, cnt + 1))
 
@@ -63,7 +62,7 @@ T = int(input())
 for tc in range(1, T + 1):
     N, M = map(int, input().split())        # 자연수 N에 몇 번의 연산을 통해 자연수 M 만들기
     visited = [-1] * 1000001
-    result = 0
+    # result = 0
     visited[N] = 0
     bfs(N)
     print(f'#{tc}', visited[M])
