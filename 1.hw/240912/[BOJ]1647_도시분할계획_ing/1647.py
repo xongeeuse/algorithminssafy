@@ -3,7 +3,10 @@ sys.stdin = open('input.txt')
 
 '''
 최소 신장 트리 + 다익스트라?
-두 개의 마을?.....
+두 개의 마을?.....어떻게 마을 두 개로?
+=> 최소 신장 트리 만들고 그 중 마지막에 추가된 간선(==가장 비용이 많이 드는 간선)을 끊어주면 최소 비용으로 두 개의 마을 만들기 가능
+=> 시간 초 과...!
+
 '''
 
 def find_set(x):
@@ -30,7 +33,7 @@ for _ in range(M):
 edge.sort()
 print(edge)
 
-cnt, total = 0, 0
+cnt, total, last = 0, 0, 0
 for weight, v1, v2 in edge:
     if find_set(v1) == find_set(v2):
         continue
@@ -38,8 +41,9 @@ for weight, v1, v2 in edge:
     union(v1, v2)
     cnt += 1
     total += weight
+    last = weight
 
     if cnt == N - 1:
         break
 
-print(total)
+print(total - last)
