@@ -1,0 +1,55 @@
+# from collections import deque
+
+def solution(tickets):
+    answer = ['ICN']
+    
+    tickets.sort(key = lambda x: (x[0], x[1]))
+
+    adjL = {}
+    for t in tickets:
+        if t[0] not in adjL:
+            adjL[t[0]] = [t[1]]
+        else: adjL[t[0]].append(t[1])
+        
+    while True:
+        if len(answer) == len(tickets) + 1:
+            break
+        
+        now = answer[-1]
+        # if len(adjL[now]) > 1:
+        #     answer.append(adjL[now].pop(0))
+        #     continue
+        answer.append(adjL[now].pop(0))
+        
+    return answer
+
+
+
+# 2
+# from collections import deque
+
+def solution(tickets):
+    answer = ['ICN']
+
+    # tickets.sort(key = lambda x: (x[0], x[1]))
+
+    adjL = {}
+    for v1, v2 in tickets:
+        if v1 not in adjL:
+            adjL[v1] = [v2]
+        else: adjL[v1].append(v2)
+        
+    for key in adjL.keys():
+        adjL[key].sort(reverse = True)
+
+    while True:
+        if len(answer) == len(tickets) + 1:
+            break
+
+        now = answer[-1]
+        if len(adjL[now]) > 1:
+            answer.append(adjL[now].pop(0))
+            continue
+        answer.append(adjL[now].pop(0))
+
+    return answer
