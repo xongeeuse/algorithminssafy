@@ -20,7 +20,7 @@ sys.stdin = open('input.txt')
 from collections import deque
 
 def hide_and_seek(N, K):
-    global result
+    global result, cnt
 
     q = deque()
     visited[N] = 0
@@ -29,8 +29,11 @@ def hide_and_seek(N, K):
     while q:
         depth, now = q.popleft()
         if now == K:
-            if result >= depth:
+            if result > depth:
                 result = depth
+                cnt = 1
+            elif result == depth:
+                cnt += 1
             continue
 
         if depth >= result:
@@ -42,11 +45,14 @@ def hide_and_seek(N, K):
             visited[next] = visited[now] + time
             q.append((visited[next], next))
 
+    return cnt
+
 
 
 N, K = map(int, input().split())
 visited = [-1] * 100001
 
 result = float('inf')
-hide_and_seek(N, K)
+cnt = hide_and_seek(N, K)
+print(cnt)
 print(result)
