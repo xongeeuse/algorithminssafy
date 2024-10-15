@@ -4,7 +4,7 @@ sys.stdin = open('input.txt')
 from collections import deque
 
 def bfs(i, j, color):
-    global ally, enemy
+    # global ally, enemy
     q = deque()
     q.append((i, j))
     visited[i][j] = 1
