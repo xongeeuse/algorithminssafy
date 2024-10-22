@@ -6,7 +6,37 @@ data = []
 
 for _ in range(N):
     data.append(int(input()))
-# print(data)
+
+result = -1
+
+for i in range(N):
+    if i <= N - K:
+        pick = set(data[i:i + K])
+    else:
+        # pick = set(data[i:])
+        # pick.update(data[:(i + K) % N])
+        pick = set(data[i:]) | set(data[:(i + K) % N])
+
+
+    pick.add(C)
+    cnt = len(pick)
+
+    # 고른 접시가 모두 다른 종류 + C 라면 그게 최댓값이니까 종료
+    if cnt == K + 1:
+        result = cnt
+        break
+
+    if result < cnt:
+        result = cnt
+
+print(result)
+
+
+
+
+
+
+
 
 
 
@@ -32,28 +62,3 @@ for _ in range(N):
 #         result = cnt
 #
 # print(result)
-
-
-
-# 2
-result = -1
-
-for i in range(N):
-    if i <= N - K:
-        pick = set(data[i:i + K])
-    else:
-        pick = set(data[i:])
-        pick.update(data[:(i + K) % N])
-
-    pick.add(C)
-    cnt = len(pick)
-
-    # 고른 접시가 모두 다른 종류고 + 지금까지 고른 접시에 C가 없으면 그게 최댓값이니까 종료
-    if cnt == K + 1:
-        result = cnt
-        break
-
-    if result < cnt:
-        result = cnt
-
-print(result)
