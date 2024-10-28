@@ -1,3 +1,6 @@
+# 몰르겠습니다...
+# 담주부터 백준에서 문제 고를래..
+
 friends = ["muzi", "ryan", "frodo", "neo"]
 gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi",
          "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"]
