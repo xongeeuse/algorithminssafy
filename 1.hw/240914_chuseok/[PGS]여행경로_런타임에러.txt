@@ -1,4 +1,5 @@
 # from collections import deque
+#
 
 def solution(tickets):
     answer = ['ICN']
